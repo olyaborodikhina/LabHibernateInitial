@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jpa-lab-08:war">
+    <output-path>$PROJECT_DIR$/lab-08-blog/target</output-path>
+    <root id="archive" name="jpa-lab-08-1.0.war">
+      <element id="artifact" artifact-name="jpa-lab-08:war exploded" />
+    </root>
+  </artifact>
+</component>

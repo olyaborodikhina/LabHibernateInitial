@@ -12,11 +12,22 @@ import javax.persistence.PersistenceContext;
  * @author Anton German &lt;AGerman@luxoft.com&gt;
  * @version 1.0 23.02.15
  */
+@Repository
 public class CompanyService {
+    @PersistenceContext
+    private EntityManager em;
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+
     public void init() {
+        String[] companies = {"Microsoft", "IBM"};
+        for(String name: companies){
+            Company company = new Company();
+            company.setName(name);
+            em.persist(company);
+        }
     }
 
     public Company getCompany(int id) {
-        return null;
+            return em.find(Company.class, id);
     }
 }
